@@ -1,3 +1,4 @@
+// The initial value of the state object
 export const state = {
   recipe: {},
 };
@@ -13,6 +14,7 @@ export const loadRecipe = async function (id) {
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
 
     const { recipe } = data.data;
+    // Updating the state object
     state.recipe = {
       id: recipe.id,
       title: recipe.title,

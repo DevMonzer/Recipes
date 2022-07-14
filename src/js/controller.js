@@ -176,6 +176,7 @@ const showRecipe = async function () {
 };
 
 // Show a recipe based on event handler
+
 // window.addEventListener('hashchange', showRecipe);
 // window.addEventListener('load', showRecipe);
 

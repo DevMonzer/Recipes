@@ -1,5 +1,5 @@
 import icons from 'url:../img/icons.svg';
-console.log(icons);
+// console.log(icons);
 
 const recipeContainer = document.querySelector('.recipe');
 
@@ -29,8 +29,9 @@ const renderSpinner = function (parentEl) {
 };
 
 const showRecipe = async function () {
+  // 1) Loading a Recipe
   try {
-    // 1) Loading a Recipe
+    // Rendering a spinner before data shows up
     renderSpinner(recipeContainer);
     const res = await fetch(
       'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886'
@@ -52,7 +53,7 @@ const showRecipe = async function () {
       ingredients: recipe.ingredients,
     };
 
-    console.log(recipe);
+    // console.log(recipe);
 
     // 2) Rendering a Recipe
     const markup = `

@@ -59,10 +59,10 @@ const showRecipe = async function () {
     // 2) Rendering a Recipe
     const markup = `
       <figure class="recipe__fig">
-      <img src="${recipe.image}" alt="${recipe.title}" />
-      <h1 class="recipe__title">
-        <span>${recipe.title}</span>
-      </h1>
+        <img src="${recipe.image}" alt="${recipe.title}" />
+        <h1 class="recipe__title">
+          <span>${recipe.title}</span>
+        </h1>
       </figure>
 
       <div class="recipe__details">

@@ -17,7 +17,9 @@ const showRecipe = async function () {
     const res = await fetch(
       'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886'
     );
+
     const data = await res.json();
+
     let { recipe } = data.data;
     recipe = {
       id: recipe.id,
@@ -31,7 +33,6 @@ const showRecipe = async function () {
     };
 
     console.log(recipe);
-
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
   } catch (err) {
     alert('Error: ' + err.message);

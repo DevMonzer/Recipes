@@ -24,12 +24,14 @@ const renderSpinner = function (parentEl) {
     </div> 
 
     `;
+  parentEl.innerHTML = '';
   parentEl.insertAdjacentHTML('afterbegin', markup);
 };
 
-// 1) Loading a Recipe
 const showRecipe = async function () {
   try {
+    // 1) Loading a Recipe
+    renderSpinner(recipeContainer);
     const res = await fetch(
       'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886'
     );

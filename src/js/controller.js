@@ -98,7 +98,7 @@ const showRecipe = async function () {
         ${recipe.ingredients
           .map(ing => {
             return `
-          <li class="recipe__ingredient">
+          <li class="recipe__ingredient"> 
             <svg class="recipe__icon">
               <use href="src/img/icons.svg#icon-check"></use>
             </svg>

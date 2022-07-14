@@ -175,4 +175,10 @@ const showRecipe = async function () {
   }
 };
 
-window.addEventListener('hashchange', showRecipe);
+// Show a recipe based on event handler
+// window.addEventListener('hashchange', showRecipe);
+// window.addEventListener('load', showRecipe);
+
+['hashchange', 'load'].forEach(event =>
+  window.addEventListener(event, showRecipe)
+);

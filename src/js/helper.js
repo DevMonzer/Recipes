@@ -20,3 +20,9 @@ export const getJSON = async function (url) {
     throw err;
   }
 };
+
+/*
+
+  This file contains helper functions
+
+*/

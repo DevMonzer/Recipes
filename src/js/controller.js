@@ -10,6 +10,7 @@ const recipeContainer = document.querySelector('.recipe');
 
 ///////////////////////////////////////
 
+// Showing which recipe you want on the main page
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);

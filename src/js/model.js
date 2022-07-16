@@ -7,12 +7,13 @@ export const state = {
   recipe: {},
 };
 
+// Loading the recipe after getting it from the server
 export const loadRecipe = async function (id) {
   try {
     const data = await getJSON(`${API_URL}/${id}`);
 
     const { recipe } = data.data;
-    // Updating the state object
+    // Updating the state object with the new recipe we got from the server
     state.recipe = {
       id: recipe.id,
       title: recipe.title,

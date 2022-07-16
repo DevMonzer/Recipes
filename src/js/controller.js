@@ -31,7 +31,7 @@ const controlSearchResults = async function () {
     // Reciving the search query from the searchView model
     const query = searchView.getQuery();
 
-    await model.loadSearchResults('pizza');
+    await model.loadSearchResults(query);
     console.log(model.state.search.results);
   } catch (err) {
     console.log(err);

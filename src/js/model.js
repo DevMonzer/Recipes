@@ -29,3 +29,13 @@ export const loadRecipe = async function (id) {
     throw err;
   }
 };
+
+// Implementing the search functionality
+
+export const loadSearchResults = async function (query) {
+  try {
+    const data = await getJSON(`${API_URL}/recipes?search=pizza`);
+  } catch (err) {
+    throw err;
+  }
+};

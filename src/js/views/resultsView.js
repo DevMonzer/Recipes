@@ -15,16 +15,16 @@ class ResultsView extends View {
   _generateMarkupPreview() {
     return `
     <li class="preview">
-        <a class="preview__link preview__link--active"      href="#23456">
+        <a class="preview__link preview__link--active"      href="#${results.id}">
             <figure class="preview__fig">
-            <img src="src/img/test-1.jpg" alt="Test" />
+            <img src="${results.image}" alt="Test" />
             </figure>
             <div class="preview__data">
-            <h4 class="preview__title">Pasta with Tomato Cream ...</h4>
-            <p class="preview__publisher">The Pioneer Woman</p>
+            <h4 class="preview__title">${results.title}</h4>
+            <p class="preview__publisher">${results.publisher}</p>
             <div class="preview__user-generated">
                 <svg>
-                <use href="src/img/icons.svg#icon-user"></use>
+                <use href="${icons}#icon-user"></use>
                 </svg>
             </div>
             </div>

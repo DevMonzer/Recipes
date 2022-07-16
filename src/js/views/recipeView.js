@@ -6,6 +6,7 @@ class RecipeView {
   #parentElement = document.querySelector('.recipe');
   #data;
 
+  // Rendering the recipe on the screen
   render(data) {
     this.#data = data;
     const markup = this.#generateMarkup();
@@ -17,6 +18,7 @@ class RecipeView {
     this.#parentElement.innerHTML = '';
   }
 
+  // Showing a spinner before a recipe gets shown
   renderSpinner = function () {
     const markup = `
       <div class="spinner">
@@ -30,6 +32,14 @@ class RecipeView {
     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
   };
 
+  // Adding a handler for event handelers (view logic) and send it to the controller (application logic) to be executed
+  addHandlerRenderer(handler) {
+    ['hashchange', 'load'].forEach(event =>
+      window.addEventListener(event, handler)
+    );
+  }
+
+  // Generate a recipe
   #generateMarkup() {
     return `
       <figure class="recipe__fig">
@@ -95,7 +105,9 @@ class RecipeView {
       <div class="recipe__ingredients">
         <h2 class="heading--2">Recipe ingredients</h2>
         <ul class="recipe__ingredient-list">
-          ${this.#data.ingredients.map(this.#generateMarkupIngredient).join('')}
+          ${this.#data.ingredients
+            .map(this.#generateMarkupIngredient)
+            .join('')} 
       </div>
 
       <div class="recipe__directions">
@@ -121,6 +133,7 @@ class RecipeView {
     `;
   }
 
+  // Generate recipe ingredients
   #generateMarkupIngredient(ing) {
     return `
     <li class="recipe__ingredient">

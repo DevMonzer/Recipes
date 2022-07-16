@@ -1,5 +1,6 @@
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
+import { addHandlerRenderer } from './views/recipeView';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -24,7 +25,6 @@ const controlRecipes = async function () {
 
     // 2) Rendering a Recipe
     recipeView.render(model.state.recipe);
-    // const recipeView = new recipeView(model.state.recipe);
   } catch (err) {
     alert('Error: ' + err.message);
   }
@@ -32,9 +32,8 @@ const controlRecipes = async function () {
 
 // Show a recipe based on event handler
 
-// window.addEventListener('hashchange', controlRecipes);
-// window.addEventListener('load', controlRecipes);
+const init = function () {
+  recipeView.addHandlerRenderer(controlRecipes);
+};
 
-['hashchange', 'load'].forEach(event =>
-  window.addEventListener(event, controlRecipes)
-);
+init();

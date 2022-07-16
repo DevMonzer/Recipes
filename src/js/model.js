@@ -9,10 +9,7 @@ export const state = {
 
 export const loadRecipe = async function (id) {
   try {
-    const res = await fetch(`${API_URL}/${id}`);
-    const data = await res.json();
-
-    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+    const data = await getJSON(`${API_URL}/${id}`);
 
     const { recipe } = data.data;
     // Updating the state object
@@ -28,6 +25,6 @@ export const loadRecipe = async function (id) {
     };
     // console.log(state.recipe);
   } catch (err) {
-    alert(err.message);
+    console.error(`${err} 💥💥💥💥`);
   }
 };

@@ -17,7 +17,7 @@ const controlRecipes = async function () {
     const id = window.location.hash.slice(1);
     if (!id) return;
 
-    // Rendering a spinner before data shows up
+    // 0) Rendering a spinner before data shows up
     recipeView.renderSpinner();
 
     // 1) Loading a Recipe
@@ -31,8 +31,18 @@ const controlRecipes = async function () {
   }
 };
 
-// Show a recipe based on event handler
+const controlSearchResults = async function () {
+  try {
+    await model.loadSearchResults('pizza');
+    console.log(model.state.search.results);
+  } catch (err) {
+    console.log(err);
+  }
+};
 
+controlSearchResults();
+
+// Show a recipe based on event handler
 const init = function () {
   recipeView.addHandlerRenderer(controlRecipes);
 };

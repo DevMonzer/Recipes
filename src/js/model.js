@@ -37,20 +37,19 @@ export const loadRecipe = async function (id) {
 // Implementing the search functionality (getting the search results and store them inside the search results array inside the state object)
 export const loadSearchResults = async function (query) {
   try {
-    const data = await getJSON(`${API_URL}?search=${query}`);
-    console.log(data);
+    state.search.query = query;
 
-    state.search.results = data.data.recipes(recipe => {
+    const data = await getJSON(`${API_URL}?search=${query}`);
+
+    state.search.results = data.data.recipes.map(rec => {
       return {
-        id: recipe.id,
-        title: recipe.title,
-        publisher: recipe.publisher,
-        image: recipe.image_url,
+        id: rec.id,
+        title: rec.title,
+        publisher: rec.publisher,
+        image: rec.image_url,
       };
     });
   } catch (err) {
     throw err;
   }
 };
-
-loadSearchResults('pizza');

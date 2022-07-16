@@ -41,6 +41,7 @@ const controlSearchResults = async function () {
 // Show a recipe based on event handler
 const init = function () {
   recipeView.addHandlerRenderer(controlRecipes);
+  searchView.addHandlerSearch(controlSearchResults);
 };
 
 init();

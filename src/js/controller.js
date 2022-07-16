@@ -26,7 +26,8 @@ const controlRecipes = async function () {
     // 2) Rendering a Recipe
     recipeView.render(model.state.recipe);
   } catch (err) {
-    alert('Error: ' + err.message);
+    // Rendering error
+    recipeView.renderError();
   }
 };
 
@@ -37,3 +38,9 @@ const init = function () {
 };
 
 init();
+
+/*
+
+  Make sure to throw errors from other modules to be shown here
+
+*/

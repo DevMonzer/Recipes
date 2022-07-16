@@ -5,6 +5,10 @@ import { getJSON } from './helper.js';
 // The initial value of the state object
 export const state = {
   recipe: {},
+  search: {
+    query: '',
+    results: [],
+  },
 };
 
 // Loading the recipe after getting it from the server
@@ -30,12 +34,23 @@ export const loadRecipe = async function (id) {
   }
 };
 
-// Implementing the search functionality
-
+// Implementing the search functionality (getting the search results and store them inside the search results array inside the state object)
 export const loadSearchResults = async function (query) {
   try {
-    const data = await getJSON(`${API_URL}/recipes?search=pizza`);
+    const data = await getJSON(`${API_URL}?search=${query}`);
+    console.log(data);
+
+    state.search.results = data.data.recipes(recipe => {
+      return {
+        id: recipe.id,
+        title: recipe.title,
+        publisher: recipe.publisher,
+        image: recipe.image_url,
+      };
+    });
   } catch (err) {
     throw err;
   }
 };
+
+loadSearchResults('pizza');

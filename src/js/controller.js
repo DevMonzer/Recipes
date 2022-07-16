@@ -28,7 +28,7 @@ const controlRecipes = async function () {
 
 const controlSearchResults = async function () {
   try {
-    // 1)Reciving the search query from the searchView model
+    // 1) Reciving the search query from the searchView model
     const query = searchView.getQuery();
     if (!query) return;
 

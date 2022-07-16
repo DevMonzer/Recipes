@@ -19,7 +19,7 @@ class RecipeView {
   }
 
   // Showing a spinner before a recipe gets shown
-  renderSpinner = function () {
+  renderSpinner() {
     const markup = `
       <div class="spinner">
         <svg>
@@ -28,9 +28,24 @@ class RecipeView {
       </div> 
   
       `;
-    this.#parentElement.innerHTML = '';
+    this.#clear;
     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
-  };
+  }
+
+  renderError(message) {
+    const markup = `
+      <div class="error">
+          <div>
+            <svg>
+              <use href="${icons}#icon-alert-triangle"></use>
+            </svg>
+          </div>
+          <p>${message}</p>
+      </div> 
+    `;
+    this.#clear;
+    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
 
   // Adding a handler for event handelers (view logic) and send it to the controller (application logic) to be executed
   addHandlerRenderer(handler) {

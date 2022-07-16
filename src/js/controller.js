@@ -6,6 +6,11 @@ import resultsView from './views/resultsView.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
+// Don't rerender unless there is a change in the view
+// if (module.hot) {
+//   module.hot.accept();
+// }
+
 // Showing which recipe you want on the main page
 const controlRecipes = async function () {
   try {
@@ -39,8 +44,9 @@ const controlSearchResults = async function () {
     await model.loadSearchResults(query);
 
     // 3) Rendering the results
-    console.log(model.state.search.results);
-    resultsView.render(model.state.search.results);
+    // console.log(model.state.search.results);
+    // resultsView.render(model.state.search.results);
+    resultsView.render(model.getSearchResultsPage(1));
   } catch (err) {
     console.log(err);
   }

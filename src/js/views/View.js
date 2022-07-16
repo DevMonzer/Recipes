@@ -5,6 +5,10 @@ export default class Veiw {
 
   // Rendering the recipe on the screen
   render(data) {
+    // If we got no data we throw an error
+    if (!data || (Array.isArray(data) && data.length === 0))
+      return this.renderError();
+
     this._data = data;
     const markup = this._generateMarkup();
     this._clear;

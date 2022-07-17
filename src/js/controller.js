@@ -7,11 +7,6 @@ import paginationView from './views/paginationView.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-// Don't rerender unless there is a change in the view
-// if (module.hot) {
-//   module.hot.accept();
-// }
-
 // Showing which recipe you want on the main page
 const controlRecipes = async function () {
   try {
@@ -45,8 +40,6 @@ const controlSearchResults = async function () {
     await model.loadSearchResults(query);
 
     // 3) Rendering the results
-    // console.log(model.state.search.results);
-    // resultsView.render(model.state.search.results);
     resultsView.render(model.getSearchResultsPage());
 
     // 4) Render initial pagination buttons
@@ -64,7 +57,7 @@ const controlPagination = function (goToPage) {
   paginationView.render(model.state.search);
 };
 
-// Show a recipe based on event handler
+// Handling events on actions
 const init = function () {
   recipeView.addHandlerRenderer(controlRecipes);
   searchView.addHandlerSearch(controlSearchResults);

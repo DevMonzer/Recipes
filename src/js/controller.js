@@ -8,9 +8,9 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
 // Don't rerender unless there is a change in the view
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 // Showing which recipe you want on the main page
 const controlRecipes = async function () {
@@ -47,7 +47,7 @@ const controlSearchResults = async function () {
     // 3) Rendering the results
     // console.log(model.state.search.results);
     // resultsView.render(model.state.search.results);
-    resultsView.render(model.getSearchResultsPage(1));
+    resultsView.render(model.getSearchResultsPage(5));
 
     // 4) Render initial pagination buttons
     paginationView.render(model.state.search);

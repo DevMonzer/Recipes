@@ -71,6 +71,7 @@ const controlServings = function (newServings) {
 // Handling events on actions
 const init = function () {
   recipeView.addHandlerRenderer(controlRecipes);
+  recipeView.addHandlerUpdateServings(controlServings);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
 };

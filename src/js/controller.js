@@ -47,7 +47,7 @@ const controlSearchResults = async function () {
     // 3) Rendering the results
     // console.log(model.state.search.results);
     // resultsView.render(model.state.search.results);
-    resultsView.render(model.getSearchResultsPage(5));
+    resultsView.render(model.getSearchResultsPage());
 
     // 4) Render initial pagination buttons
     paginationView.render(model.state.search);
@@ -62,14 +62,6 @@ const controlPagination = function (goToPage) {
 
   // 2) Render NEW pagination buttons
   paginationView.render(model.state.search);
-};
-
-const controlServings = function (newServings) {
-  // Update the recipe servings (in state)
-  model.updateServings(newServings);
-
-  // Update the recipe view
-  recipeView.update(model.state.recipe);
 };
 
 // Show a recipe based on event handler

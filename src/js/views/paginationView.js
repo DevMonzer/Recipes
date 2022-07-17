@@ -4,7 +4,6 @@ import icons from 'url:../../img/icons.svg'; // Parcel 2
 class PaginationView extends View {
   _parentElement = document.querySelector('.pagination');
 
-  // Handling pagination buttons change
   addHandlerClick(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--inline');
@@ -15,7 +14,6 @@ class PaginationView extends View {
     });
   }
 
-  // Rendering the pagination buttons based on the number of pages
   _generateMarkup() {
     const curPage = this._data.page;
     const numPages = Math.ceil(

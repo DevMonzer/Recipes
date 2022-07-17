@@ -1,34 +1,35 @@
 import View from './View.js';
 
-import icons from 'url:../../img/icons.svg';
-
+// import icons from '../img/icons.svg'; // Parcel 1
+import icons from 'url:../../img/icons.svg'; // Parcel 2
 import { Fraction } from 'fractional';
 
-// Here we are copying the View functions to the RecipeView class
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
-  _errorMessage = 'We could not find that recipe. Please try again';
+  _errorMessage = 'We could not find that recipe. Please try another one!';
   _message = '';
 
-  // Adding a handler for event handelers (view logic) and send it to the controller (application logic) to be executed
-  addHandlerRenderer(handler) {
-    ['hashchange', 'load'].forEach(event =>
-      window.addEventListener(event, handler)
-    );
+  addHandlerRender(handler) {
+    ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
 
-  // Handling servings update
   addHandlerUpdateServings(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--update-servings');
       if (!btn) return;
-
       const { updateTo } = btn.dataset;
       if (+updateTo > 0) handler(+updateTo);
     });
   }
 
-  // Generate a recipe
+  addHandlerAddBookmark(handler) {
+    this._parentElement.addEventListener('click', function (e) {
+      const btn = e.target.closest('.btn--bookmark');
+      if (!btn) return;
+      handler();
+    });
+  }
+
   _generateMarkup() {
     return `
       <figure class="recipe__fig">
@@ -120,7 +121,6 @@ class RecipeView extends View {
     `;
   }
 
-  // Generate recipe ingredients
   _generateMarkupIngredient(ing) {
     return `
     <li class="recipe__ingredient">

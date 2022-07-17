@@ -7,7 +7,7 @@ import paginationView from './views/paginationView.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-// Showing which recipe you want on the main page
+// Rendering Recipes
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
@@ -27,6 +27,7 @@ const controlRecipes = async function () {
   }
 };
 
+// Handling Search
 const controlSearchResults = async function () {
   try {
     // Rendering a spinner inside the recipes view
@@ -49,12 +50,22 @@ const controlSearchResults = async function () {
   }
 };
 
+// Handling Pagination
 const controlPagination = function (goToPage) {
   // 1) Render NEW results
   resultsView.render(model.getSearchResultsPage(goToPage));
 
   // 2) Render NEW pagination buttons
   paginationView.render(model.state.search);
+};
+
+// Handling Recipe Updating
+const controlServings = function (newServings) {
+  // Update the recipe servings (in state)
+  model.updateServings(newServings);
+
+  // Update the recipe view
+  recipeView.update(model.state.recipe);
 };
 
 // Handling events on actions

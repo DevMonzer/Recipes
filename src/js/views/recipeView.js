@@ -17,6 +17,16 @@ class RecipeView extends View {
     );
   }
 
+  // Handling servings update
+  addHandlerUpdateServings(handler) {
+    this._parentElement.addEventListener('click', function (e) {
+      const btn = e.target.closest('.btn--update-servings');
+      if (!btn) return;
+      const { updateTo } = btn.dataset;
+      if (+updateTo > 0) handler(+updateTo);
+    });
+  }
+
   // Generate a recipe
   _generateMarkup() {
     return `

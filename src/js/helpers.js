@@ -29,6 +29,7 @@ export const AJAX = async function (url, uploadData = undefined) {
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
     return data;
   } catch (err) {
+    // We throw the error to display it inside the controller module
     throw err;
   }
 };

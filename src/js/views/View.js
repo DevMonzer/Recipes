@@ -54,7 +54,7 @@ export default class View {
     });
   }
 
-  // Clear the input filed
+  // Clear the recipe filed
   _clear() {
     this._parentElement.innerHTML = '';
   }

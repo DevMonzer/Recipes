@@ -22,7 +22,7 @@ export const AJAX = async function (url, uploadData = undefined) {
         })
       : fetch(url);
 
-    // If the fetch process took too long time then we throw an error
+    // If the fetch process so much time then we throw an error
     const res = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);
     const data = await res.json();
 

@@ -35,11 +35,12 @@ const controlRecipes = async function () {
   }
 };
 
+// Load recipes on the screen
 const controlSearchResults = async function () {
   try {
     resultsView.renderSpinner();
 
-    // 1) Get search query
+    // 1) Get search input field value an make the search
     const query = searchView.getQuery();
     if (!query) return;
 
@@ -56,6 +57,7 @@ const controlSearchResults = async function () {
   }
 };
 
+// Controll the recipes pagination
 const controlPagination = function (goToPage) {
   // 1) Render NEW results
   resultsView.render(model.getSearchResultsPage(goToPage));

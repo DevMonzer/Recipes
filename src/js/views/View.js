@@ -104,3 +104,5 @@ export default class View {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 }
+
+// Reusable code for all Views

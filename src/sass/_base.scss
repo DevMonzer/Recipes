@@ -63,6 +63,10 @@ body {
     'head head'
     'list recipe';
 
+  @media only screen and (max-width: 800px) {
+    grid-template-rows: 15rem minmax(100rem, auto);
+  }
+
   @media only screen and (max-width: $bp-large) {
     max-width: 100%;
     margin: 0;

@@ -14,6 +14,7 @@ export const state = {
   bookmarks: [],
 };
 
+// Create a new recipe object and format it
 const createRecipeObject = function (data) {
   const { recipe } = data.data;
   return {
@@ -29,6 +30,7 @@ const createRecipeObject = function (data) {
   };
 };
 
+// Load the recipe object from the APi
 export const loadRecipe = async function (id) {
   try {
     const data = await AJAX(`${API_URL}${id}?key=${KEY}`);

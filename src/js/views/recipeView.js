@@ -4,11 +4,13 @@ import View from './View.js';
 import icons from 'url:../../img/icons.svg'; // Parcel 2
 import { Fraction } from 'fractional';
 
+// Render the recipe object in our page
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
   _errorMessage = 'We could not find that recipe. Please try another one!';
   _message = '';
 
+  // Listen for events
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
@@ -121,6 +123,7 @@ class RecipeView extends View {
     `;
   }
 
+  // Generate the ingredients menu
   _generateMarkupIngredient(ing) {
     return `
     <li class="recipe__ingredient">

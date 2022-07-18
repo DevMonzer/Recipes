@@ -54,10 +54,12 @@ export default class View {
     });
   }
 
+  // Clear the input filed
   _clear() {
     this._parentElement.innerHTML = '';
   }
 
+  // Redner a spinner for loading
   renderSpinner() {
     const markup = `
       <div class="spinner">
@@ -70,6 +72,7 @@ export default class View {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
+  // Render an error message
   renderError(message = this._errorMessage) {
     const markup = `
       <div class="error">
@@ -85,6 +88,7 @@ export default class View {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
+  // Render a message
   renderMessage(message = this._message) {
     const markup = `
       <div class="message">

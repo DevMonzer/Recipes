@@ -15,6 +15,7 @@ class RecipeView extends View {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
 
+  // Handle servings update
   addHandlerUpdateServings(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--update-servings');
@@ -24,6 +25,7 @@ class RecipeView extends View {
     });
   }
 
+  // Handle new bookmarks
   addHandlerAddBookmark(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--bookmark');
@@ -32,6 +34,7 @@ class RecipeView extends View {
     });
   }
 
+  // Recipe code
   _generateMarkup() {
     return `
       <figure class="recipe__fig">

@@ -13,6 +13,7 @@ $gradient: linear-gradient(to right bottom, $color-grad-1, $color-grad-2);
 
 $bp-large: 78.15em; // 1250px
 $bp-medium: 61.25em; // 980px
+$bp-midMedium: 50em; // 800px
 $bp-small: 37.5em; // 600px
 $bp-smallest: 31.25em; // 500px
 
@@ -63,7 +64,7 @@ body {
     'head head'
     'list recipe';
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: $bp-midMedium) {
     grid-template-rows: 15rem minmax(100rem, auto);
   }
 

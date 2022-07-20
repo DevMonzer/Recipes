@@ -76,7 +76,7 @@ export const loadSearchResults = async function (query) {
   }
 };
 
-// Get search results
+// Get 9 results for the pagination logic
 export const getSearchResultsPage = function (page = state.search.page) {
   state.search.page = page;
 
@@ -135,6 +135,7 @@ const clearBookmarks = function () {
 };
 // clearBookmarks();
 
+// Upload a new recipe
 export const uploadRecipe = async function (newRecipe) {
   try {
     const ingredients = Object.entries(newRecipe)

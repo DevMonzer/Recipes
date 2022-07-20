@@ -22,6 +22,10 @@
   &__btn {
     &--prev {
       float: left;
+
+      @media only screen and (max-width: $bp-midMedium) {
+        margin: 0 0 1rem 0;
+      }
     }
     &--next {
       float: right;
@@ -35,8 +39,8 @@
   padding: 0 3.5rem;
   margin-top: 4rem;
 
-  .twitter-link:link,
-  .twitter-link:visited {
+  .website-link:link,
+  .website-link:visited {
     color: $color-grey-dark-2;
   }
 }

@@ -73,8 +73,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
-      margin-left: -15px;
     }
   }
 
@@ -90,6 +88,10 @@
     max-width: 25rem;
     white-space: nowrap;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-midMedium) {
+      font-size: 1rem;
+    }
   }
 
   &__publisher {
@@ -97,6 +99,10 @@
     color: $color-grey-dark-2;
     text-transform: uppercase;
     font-weight: 600;
+
+    @media only screen and (max-width: $bp-midMedium) {
+      font-size: 1rem;
+    }
   }
 
   &__user-generated {

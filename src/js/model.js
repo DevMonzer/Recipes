@@ -78,6 +78,7 @@ export const loadSearchResults = async function (query) {
 
 // Get 9 results for the pagination logic
 export const getSearchResultsPage = function (page = state.search.page) {
+  // Create a page state to track the current page we are in
   state.search.page = page;
 
   const start = (page - 1) * state.search.resultsPerPage; // 0 ( page - 1 times the number of results we want per page )

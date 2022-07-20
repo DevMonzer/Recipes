@@ -104,6 +104,12 @@ body {
   font-weight: 600;
 }
 
+@media only screen and (max-width: 50em) {
+  .btn {
+    padding: 1.5rem 2rem;
+  }
+}
+
 .btn svg {
   height: 2.25rem;
   width: 2.25rem;

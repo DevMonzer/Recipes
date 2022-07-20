@@ -57,8 +57,8 @@ body {
     width: auto;
     -ms-grid-rows: 15rem minmax(100rem, auto);
         grid-template-rows: 15rem minmax(100rem, auto);
-    -ms-grid-columns: 0.5fr 2.5fr;
-        grid-template-columns: 0.5fr 2.5fr;
+    -ms-grid-columns: 0.5fr 1fr;
+        grid-template-columns: 0.5fr 1fr;
   }
 }
 
@@ -831,7 +831,7 @@ body {
 
 @media only screen and (max-width: 50em) {
   .recipe__details {
-    padding: 0rem 0rem;
+    padding: 4rem 0rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -845,7 +845,7 @@ body {
 
 @media only screen and (max-width: 37.5em) {
   .recipe__details {
-    padding: 5rem 0.2rem;
+    padding: 5rem 0;
   }
 }
 
@@ -933,6 +933,13 @@ body {
       grid-template-columns: 1fr 1fr;
   gap: 2.5rem 3rem;
   list-style: none;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .recipe__ingredient-list {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .recipe__ingredient {

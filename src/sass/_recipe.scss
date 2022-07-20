@@ -71,14 +71,14 @@
     padding: 7.5rem 8rem 3.5rem 8rem;
 
     @media only screen and (max-width: $bp-midMedium) {
-      padding: 0rem 0rem;
+      padding: 4rem 0rem;
       flex-direction: column;
       justify-content: center;
       row-gap: 1rem;
     }
 
     @media only screen and (max-width: $bp-small) {
-      padding: 5rem 0.2rem;
+      padding: 5rem 0;
     }
   }
 
@@ -148,6 +148,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem 3rem;
     list-style: none;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__ingredient {

@@ -8,6 +8,16 @@
       transition: all 0.3s;
       border-right: 1px solid #fff;
       text-decoration: none;
+
+      @media only screen and (max-width: $bp-midMedium) {
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        // align-items: start;
+        justify-content: center;
+
+        // text-align: center;
+        border-right: none;
+      }
     }
 
     &:hover {
@@ -60,6 +70,15 @@
     grid-template-columns: 1fr 2rem;
     row-gap: 0.1rem;
     align-items: center;
+
+    @media only screen and (max-width: $bp-midMedium) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      margin-left: -15px;
+    }
   }
 
   &__title {

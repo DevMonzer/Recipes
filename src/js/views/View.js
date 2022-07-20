@@ -25,6 +25,7 @@ export default class View {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
+  // Update only changes in state and render the changed items only
   update(data) {
     this._data = data;
     const newMarkup = this._generateMarkup();

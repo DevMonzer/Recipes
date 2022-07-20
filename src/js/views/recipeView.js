@@ -20,7 +20,9 @@ class RecipeView extends View {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--update-servings');
       if (!btn) return;
+
       const { updateTo } = btn.dataset;
+      // Update only to a positive number (we can't go less than 0)
       if (+updateTo > 0) handler(+updateTo);
     });
   }

@@ -12,6 +12,8 @@ export default class View {
    * @author Jonas Schmedtmann
    * @todo Finish implementation
    */
+
+  // Render the markup weather it's a recipe, a message, an error ... etc
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();

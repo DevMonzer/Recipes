@@ -10,6 +10,7 @@ class PaginationView extends View {
       const btn = e.target.closest('.btn--inline');
       if (!btn) return;
 
+      // We use the dataset prop to go the specified page
       const goToPage = +btn.dataset.goto;
       handler(goToPage);
     });

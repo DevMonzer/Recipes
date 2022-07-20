@@ -556,7 +556,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 1.5rem 2rem;
+    padding: 1rem 0rem;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;

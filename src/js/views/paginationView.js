@@ -38,7 +38,7 @@ class PaginationView extends View {
       `;
     }
 
-    // Last page
+    // If we are in the last page
     if (curPage === numPages && numPages > 1) {
       return `
         <button data-goto="${
@@ -52,7 +52,7 @@ class PaginationView extends View {
       `;
     }
 
-    // Other page
+    // If we are in the middle of pages therefore we would have next and previous buttons
     if (curPage < numPages) {
       return `
         <button data-goto="${

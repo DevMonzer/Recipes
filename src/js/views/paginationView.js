@@ -16,7 +16,10 @@ class PaginationView extends View {
   }
 
   _generateMarkup() {
+    // Track the current page number
     const curPage = this._data.page;
+
+    // Calculate the the number of pages we have
     const numPages = Math.ceil(
       this._data.results.length / this._data.resultsPerPage
     );

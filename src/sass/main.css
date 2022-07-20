@@ -52,7 +52,7 @@ body {
       grid-template-areas: 'head head' 'list recipe';
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 50em) {
   .container {
     -ms-grid-rows: 15rem minmax(100rem, auto);
         grid-template-rows: 15rem minmax(100rem, auto);
@@ -327,7 +327,7 @@ body {
           justify-content: space-between;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 50em) {
   .header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -342,7 +342,7 @@ body {
   display: block;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 50em) {
   .header__logo {
     padding: 0 30px 0 0;
   }
@@ -360,6 +360,12 @@ body {
   padding-left: 3rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+@media only screen and (max-width: 50em) {
+  .search {
+    padding-left: 1.5rem;
+  }
 }
 
 .search:focus-within {
@@ -400,7 +406,7 @@ body {
 
 @media only screen and (max-width: 61.25em) {
   .search__field {
-    width: auto;
+    width: 15rem;
   }
   .search__field::-webkit-input-placeholder {
     color: white;
@@ -428,7 +434,7 @@ body {
   margin-right: 2.5rem;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 50em) {
   .nav {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;

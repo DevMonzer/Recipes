@@ -28,6 +28,7 @@ export default class View {
   }
 
   // Update only changes in state and render the changed items only
+  // Render only the new changes (so we don't have to render the whole page document for a single change)
   update(data) {
     this._data = data;
     const newMarkup = this._generateMarkup();

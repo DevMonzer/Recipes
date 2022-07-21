@@ -86,6 +86,7 @@ const controlAddBookmark = function () {
   bookmarksView.render(model.state.bookmarks);
 };
 
+// Render bookmarks after the page is loaded
 const controlBookmarks = function () {
   bookmarksView.render(model.state.bookmarks);
 };

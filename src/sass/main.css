@@ -52,29 +52,27 @@ body {
       grid-template-areas: 'head head' 'list recipe';
 }
 
-@media only screen and (max-width: 50em) {
-  .container {
-    width: auto;
-    -ms-grid-rows: 15rem minmax(100rem, auto);
-        grid-template-rows: 15rem minmax(100rem, auto);
-    -ms-grid-columns: 0.5fr 1fr;
-        grid-template-columns: 0.5fr 1fr;
-  }
-}
-
-@media only screen and (max-width: 37.5em) {
-  .container {
-    width: 1fr;
-    -ms-grid-columns: 15rem 2fr;
-        grid-template-columns: 15rem 2fr;
-  }
-}
-
 @media only screen and (max-width: 78.15em) {
   .container {
     max-width: 100%;
     margin: 0;
     border-radius: 0;
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .container {
+    -ms-grid-rows: 15rem minmax(100rem, auto);
+        grid-template-rows: 15rem minmax(100rem, auto);
+    -ms-grid-columns: 22rem 1fr;
+        grid-template-columns: 22rem 1fr;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .container {
+    -ms-grid-columns: 15rem 1fr;
+        grid-template-columns: 15rem 1fr;
   }
 }
 

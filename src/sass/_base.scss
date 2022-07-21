@@ -64,20 +64,18 @@ body {
     'head head'
     'list recipe';
 
-  @media only screen and (max-width: $bp-midMedium) {
-    width: auto;
-    grid-template-rows: 15rem minmax(100rem, auto);
-    grid-template-columns: 0.5fr 1fr;
-  }
-
-  @media only screen and (max-width: $bp-small) {
-    width: 1fr;
-    grid-template-columns: 15rem 2fr;
-  }
-
   @media only screen and (max-width: $bp-large) {
     max-width: 100%;
     margin: 0;
     border-radius: 0;
+  }
+
+  @media only screen and (max-width: $bp-midMedium) {
+    grid-template-rows: 15rem minmax(100rem, auto);
+    grid-template-columns: 22rem 1fr;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 15rem 1fr;
   }
 }

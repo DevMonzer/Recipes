@@ -41,7 +41,7 @@ export const loadRecipe = async function (id) {
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
 
-    console.log(state.recipe);
+    // console.log(state.recipe);
   } catch (err) {
     // Temp error handling
     console.error(`${err} 💥💥💥💥`);
@@ -57,7 +57,7 @@ export const loadSearchResults = async function (query) {
 
     // Making an AJAX request to the API using the KEY
     const data = await AJAX(`${API_URL}?search=${query}&key=${KEY}`);
-    console.log(data);
+    // console.log(data);
 
     // Store rescipes details into the state object (data.data.recipes is where the recipes data is stored)
     state.search.results = data.data.recipes.map(rec => {

@@ -36,7 +36,7 @@ export const loadRecipe = async function (id) {
     const data = await AJAX(`${API_URL}${id}?key=${KEY}`);
     state.recipe = createRecipeObject(data);
 
-    // If the recipe doesn't exist in the bookmarks then mark it
+    // If the recipe doesn't exist in the bookmarks then mark it and if it exists don't do that ( this way we track recipes state for bookmarks)
     if (state.bookmarks.some(bookmark => bookmark.id === id))
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;

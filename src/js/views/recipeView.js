@@ -10,12 +10,12 @@ class RecipeView extends View {
   _errorMessage = 'We could not find that recipe. Please try another one!';
   _message = '';
 
-  // Listen for events
+  // Listen for events (recives an event handler function)
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
 
-  // Handle servings update
+  // Handle servings update (recives an event handler function)
   addHandlerUpdateServings(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--update-servings');
@@ -27,7 +27,7 @@ class RecipeView extends View {
     });
   }
 
-  // Handle new bookmarks
+  // Handle new bookmarks (recives an event handler function)
   addHandlerAddBookmark(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--bookmark');
